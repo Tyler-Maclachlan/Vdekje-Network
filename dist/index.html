@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vdekje-network.js"></script>
+    <style>
+        html,
+        body,
+        #container {
+            height: 100%;
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+
+<script>
+    var nodes = [];
+    var edges = [];
+    var container = document.getElementById('container');
+
+    for (var i = 0; i < 1000; i++) {
+        nodes.push({
+            id: "node-" + i,
+            x: Math.random() * 1000,
+            y: Math.random() * 800
+        });
+    }
+
+    for (var i = 0; i < nodes.length / 2; i++) {
+        edges.push({
+            id: 'edge-' + i,
+            to: 'node-' + Math.floor(Math.random() * nodes.length),
+            from: 'node-' + Math.floor(Math.random() * nodes.length)
+        });
+    }
+
+    const network = VNetwork(container, {
+        nodes: nodes,
+        edges: edges
+    });
+</script>
+
+</html>

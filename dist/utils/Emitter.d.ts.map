@@ -1,0 +1,1 @@
+{"version":3,"file":"Emitter.d.ts","sourceRoot":"","sources":["../../lib/utils/Emitter.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,UAAU,EAAE,MAAM,UAAU,CAAC;AAEhD,qBAAa,UAAU,CAAC,CAAC;IACvB,OAAO,CAAC,SAAS,CAAqB;IACtC,OAAO,CAAC,aAAa,CAAqB;IAE1C,EAAE,wCAKA;IAEF,IAAI,kCAEF;IAEF,GAAG,kCAGD;IAEF,IAAI,qBAOF;IAEF,IAAI,oCAEF;CACH"}
