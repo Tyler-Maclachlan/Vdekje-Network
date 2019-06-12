@@ -35,6 +35,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.7.tgz#4f2563bad652b2acb1722d7e7aae2b0ff62d192c"
   integrity sha512-1YKeT4JitGgE4SOzyB9eMwO0nGVNkNEsm9qlIt1Lqm/tG2QEiSMTD4kS3aO6L+w5SClLVxALmIBESK6Mk5wX0A==
 
+"@types/vec2@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@types/vec2/-/vec2-1.6.0.tgz#1b716e1d6fac1e30b869b1c0048b1aafb308c79e"
+  integrity sha512-3nH/Dsw9SR0gr+32p/tGb60WkggyDq9S3G2XpwqDicw++0x10WPMk7NqRArANOQkSU5ToNdC3OJBKxxy8KoC0w==
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
@@ -3522,6 +3527,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vec2@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/vec2/-/vec2-1.6.0.tgz#d2886b95fbbf638fa583aedf790ed0ee0df12185"
+  integrity sha1-0ohrlfu/Y4+lg67feQ7Q7g3xIYU=
 
 verror@1.10.0:
   version "1.10.0"

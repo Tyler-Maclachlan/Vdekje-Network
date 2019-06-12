@@ -28,8 +28,8 @@ export function createLayer() {
 export function createCircle(node: Node) {
   const shape = new (Konva as any).Circle({
     id: node.id,
-    x: node.x,
-    y: node.y,
+    x: node.position.x,
+    y: node.position.y,
     radius: 20,
     fill: "red",
     draggable: true

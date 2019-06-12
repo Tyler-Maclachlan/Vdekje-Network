@@ -1,4 +1,5 @@
 import VdekjeNetwork from "./modules/Network/Network";
+import Vector from "./modules/Physics/utils/Vector";
 
 export interface Network {
   container: HTMLElement;
@@ -10,8 +11,9 @@ export interface Network {
 
 export interface Node {
   id: string;
-  x: number;
-  y: number;
+  position: Vector;
+  height: number;
+  width: number;
   data?: {
     [key: string]: any;
   };

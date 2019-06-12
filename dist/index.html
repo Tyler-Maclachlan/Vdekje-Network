@@ -26,11 +26,15 @@
     var edges = [];
     var container = document.getElementById('container');
 
-    for (var i = 0; i < 1000; i++) {
+    for (var i = 0; i < 200; i++) {
         nodes.push({
             id: "node-" + i,
-            x: Math.random() * 1000,
-            y: Math.random() * 800
+            position: {
+                x: Math.random() * 1000,
+                y: Math.random() * 800,
+                height: 40,
+                width: 40
+            }
         });
     }
 

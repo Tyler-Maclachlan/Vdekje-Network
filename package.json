@@ -13,11 +13,13 @@
     "alasql": "^0.4.11",
     "global": "^4.3.2",
     "http-server": "^0.11.1",
-    "konva": "^3.3.3"
+    "konva": "^3.3.3",
+    "vec2": "^1.6.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.3.3",
     "@types/node": "^12.0.7",
+    "@types/vec2": "^1.6.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.0.2",
     "typescript": "^3.5.1",

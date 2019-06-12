@@ -8,8 +8,11 @@ export default class VdekjeNetwork implements Network {
     options: {
         [key: string]: any;
     };
+    private stage;
+    private layer;
     private shapes;
     private _physicsOn;
+    private physicsEngine;
     constructor(container: HTMLElement, data: {
         nodes: Node[];
         edges: Edge[];
