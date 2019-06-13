@@ -1,5 +1,5 @@
-import Vector from "./utils/Vector";
-import { Node } from "../../types";
+import Vector from './utils/Vector';
+import { Node } from '../../types';
 export default class PhysicsEntity {
     id: string;
     position: Vector;
@@ -22,6 +22,7 @@ export default class PhysicsEntity {
         x: number;
         y: number;
     }[], t: number): void;
+    updatePositionManual(x: number, y: number): void;
     private _applyFriction;
 }
 //# sourceMappingURL=PhysicsEntity.d.ts.map

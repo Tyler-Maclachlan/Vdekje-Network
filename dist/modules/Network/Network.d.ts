@@ -1,4 +1,4 @@
-import { Network, Node, Edge } from "../../types";
+import { Network, Node, Edge } from '../../types';
 export default class VdekjeNetwork implements Network {
     container: HTMLElement;
     data: {

@@ -1,1 +1,1 @@
-{"version":3,"file":"AttractionForce.d.ts","sourceRoot":"","sources":["../../../lib/modules/Physics/AttractionForce.ts"],"names":[],"mappings":"AAAA,OAAO,MAAM,MAAM,gBAAgB,CAAC;AAGpC,MAAM,CAAC,OAAO,UAAU,aAAa,CAAC,IAAI,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;;;EAc/D"}
+{"version":3,"file":"AttractionForce.d.ts","sourceRoot":"","sources":["../../../lib/modules/Physics/AttractionForce.ts"],"names":[],"mappings":"AAAA,OAAO,MAAM,MAAM,gBAAgB,CAAC;AASpC,MAAM,CAAC,OAAO,UAAU,aAAa,CAAC,IAAI,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;;;EAa/D"}

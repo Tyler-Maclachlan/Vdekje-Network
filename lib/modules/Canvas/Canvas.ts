@@ -1,6 +1,6 @@
-import { Node, Edge } from "../../types";
+import { Node, Edge } from '../../types';
 
-const Konva = require("konva");
+const Konva = require('konva');
 
 export function createStage(container: HTMLElement) {
   const width = container.clientWidth;
@@ -31,7 +31,7 @@ export function createCircle(node: Node) {
     x: node.position.x,
     y: node.position.y,
     radius: 20,
-    fill: "red",
+    fill: 'red',
     draggable: true
   });
 
@@ -42,7 +42,7 @@ export function createLine(edge: Edge, points: number[]) {
   const line = new (Konva as any).Line({
     id: edge.id,
     points: points,
-    stroke: "blue",
+    stroke: 'blue',
     strokeWidth: 2,
     tension: 1
   });

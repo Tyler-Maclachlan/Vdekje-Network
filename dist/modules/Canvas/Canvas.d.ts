@@ -1,4 +1,4 @@
-import { Node, Edge } from "../../types";
+import { Node, Edge } from '../../types';
 export declare function createStage(container: HTMLElement): any;
 export declare function createLayer(): any;
 export declare function createCircle(node: Node): any;
