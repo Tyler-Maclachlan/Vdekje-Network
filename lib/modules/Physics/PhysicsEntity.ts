@@ -19,12 +19,12 @@ export default class PhysicsEntity {
     y: number;
   } = { x: 0, y: 0 };
   private lastUpdate: number;
-  private emitter: TypedEvent<MovementEvent>;
+  private nextPosition: Vector;
 
   constructor(node: Node, options?: {}) {
     this.id = node.id;
     this.position = node.position;
-    this.emitter = new TypedEvent<MovementEvent>();
+    this.nextPosition = node.position;
     this.lastUpdate = new Date().getTime();
   }
 
@@ -40,13 +40,12 @@ export default class PhysicsEntity {
     }
   }
 
-  public update(forces: { x: number; y: number }[], t: number) {
-    const timeElapse = constrain(t - this.lastUpdate, -33, 33);
-    this.lastUpdate = t;
+  public update(forces: { x: number; y: number }[], t: number = 30) {
+    const timeElapse = t;
 
     this.applyForces(forces);
     this._applyFriction();
-    const { x, y, height, width } = this.position;
+    const { x, y } = this.position;
     let { x: vX, y: vY } = this.velocity;
     vX = constrain(vX, -5, 5);
     vY = constrain(vY, -5, 5);
@@ -56,21 +55,17 @@ export default class PhysicsEntity {
     if (Math.abs(vY) < 0.01) {
       this.velocity.y = 0;
     }
-    this.position.set({
-      x: x + timeElapse * this.velocity.x,
-      y: y + timeElapse * this.velocity.y,
-      height,
-      width
-    });
+    this.nextPosition.set( x + timeElapse * this.velocity.x,
+       y + timeElapse * this.velocity.y);
+  }
+
+  public updatePosition() {
+    this.position = this.nextPosition.clone();
+    return this.position;
   }
 
   public updatePositionManual(x: number, y: number) {
-    this.position.set({
-      x,
-      y,
-      height: this.position.height,
-      width: this.position.width
-    });
+    this.position.set(x, y);
   }
 
   private _applyFriction() {

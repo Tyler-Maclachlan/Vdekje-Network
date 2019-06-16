@@ -7,9 +7,9 @@ export default class PhysicsEngine {
         x: number;
         y: number;
     });
-    step(t: number): {
+    step(t?: number): Promise<{
         [key: string]: any;
-    };
+    }>;
     isStable(): boolean;
     updateNodePosition(nodeId: string, pos: {
         x: number;

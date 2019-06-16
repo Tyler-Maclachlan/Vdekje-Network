@@ -8,7 +8,7 @@ export default class PhysicsEntity {
         y: number;
     };
     private lastUpdate;
-    private emitter;
+    private nextPosition;
     constructor(node: Node, options?: {});
     applyForce(force: {
         x: number;
@@ -21,7 +21,8 @@ export default class PhysicsEntity {
     update(forces: {
         x: number;
         y: number;
-    }[], t: number): void;
+    }[], t?: number): void;
+    updatePosition(): Vector;
     updatePositionManual(x: number, y: number): void;
     private _applyFriction;
 }

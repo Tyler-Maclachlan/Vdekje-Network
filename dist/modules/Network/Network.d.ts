@@ -19,6 +19,7 @@ export default class VdekjeNetwork implements Network {
     }, options?: {
         [key: string]: any;
     });
+    private _render;
     private _draw;
 }
 //# sourceMappingURL=Network.d.ts.map

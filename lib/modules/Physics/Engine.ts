@@ -18,7 +18,7 @@ export default class PhysicsEngine {
     }
   }
 
-  public step(t: number): { [key: string]: any } {
+  public async step(t: number = 30): Promise< { [key: string]: any }> {
     this.stable = 0;
     const positions: { [key: string]: any } = {};
     for (let i = 0; i < this._nodes.length; i++) {
@@ -32,11 +32,13 @@ export default class PhysicsEngine {
           );
         }
         node.update(forces, t);
-        //console.log(node);
-        positions[node.id] = node.position;
       } else {
         this.stable++;
       }
+    }
+    for (let i = 0; i < this._nodes.length; i++) {
+      const node = this._nodes[i];
+      positions[node.id] = node.position;
     }
     return positions;
   }
@@ -54,7 +56,7 @@ export default class PhysicsEngine {
 
   private _nodesAroundNode(
     node: PhysicsEntity,
-    perimeter: number = 150
+    perimeter: number = 60
   ): PhysicsEntity[] {
     const { x, y } = node.position;
     return alasql(

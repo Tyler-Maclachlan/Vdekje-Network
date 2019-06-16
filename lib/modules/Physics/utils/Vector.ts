@@ -3,22 +3,15 @@ import { radsToDegrees } from '.';
 export default class Vector {
   public x: number;
   public y: number;
-  public height: number;
-  public width: number;
 
-  constructor(point: { x: number; y: number }, width: number, height: number) {
-    this.x = point.x || 0;
-    this.y = point.y || 0;
-    this.height = height;
-    this.width = width;
-  }
-
-  public set(vec: { x: number; y: number; height: number; width: number }) {
-    const { x, y, width, height } = vec;
+  constructor(x: number = 0, y: number = 0) {
     this.x = x;
     this.y = y;
-    this.height = height;
-    this.width = width;
+  }
+
+  public set(x: number, y: number) {
+    this.x = x;
+    this.y = y;
 
     return this;
   }
@@ -26,21 +19,17 @@ export default class Vector {
   public copy(vec: Vector) {
     this.x = vec.x;
     this.y = vec.y;
-    this.height = vec.height;
-    this.width = vec.width;
     return this;
   }
 
   public clear() {
     this.x = 0;
     this.y = 0;
-    this.height = 0;
-    this.width = 0;
     return this;
   }
 
   public clone() {
-    return new Vector({ x: this.x, y: this.y }, this.width, this.height);
+    return new Vector(this.x, this.y);
   }
 
   public add(vec1: Vector, vec2: Vector) {
@@ -84,7 +73,7 @@ export default class Vector {
       this.x /= s;
       this.y /= s;
     } else {
-      this.set(this);
+      this.set(this.x, this.y);
     }
     return this;
   }
@@ -104,20 +93,11 @@ export default class Vector {
   public lerp(vec: Vector, t: number) {
     const x = (vec.x - this.x) * t + this.x;
     const y = (vec.y - this.y) * t + this.y;
-    return this.set({ x, y, height: this.height, width: this.width });
+    return this.set(x, y);
   }
 
   public isZero() {
     return this.getLength() < 0.0001;
-  }
-
-  public getBounds() {
-    return {
-      top: this.y + this.height,
-      bottom: this.y,
-      left: this.x,
-      right: this.x + this.width
-    };
   }
 
   public dot(vec: Vector) {

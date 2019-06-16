@@ -16,8 +16,8 @@ export default function getAttraction(vec1: Vector, vec2: Vector) {
   const fX = getHorizontalComponent(angle, F);
   const fY = getVerticalComponent(angle, F);
 
-  const something = new Vector({ x: fX, y: fY }, 1, 1);
-  something.normalize();
+  const attraction = new Vector(fX, fY);
+  attraction.normalize();
 
-  return { x: something.x, y: something.y };
+  return { x: attraction.x, y: attraction.y };
 }

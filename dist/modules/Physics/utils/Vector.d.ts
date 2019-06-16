@@ -1,18 +1,8 @@
 export default class Vector {
     x: number;
     y: number;
-    height: number;
-    width: number;
-    constructor(point: {
-        x: number;
-        y: number;
-    }, width: number, height: number);
-    set(vec: {
-        x: number;
-        y: number;
-        height: number;
-        width: number;
-    }): this;
+    constructor(x?: number, y?: number);
+    set(x: number, y: number): this;
     copy(vec: Vector): this;
     clear(): this;
     clone(): Vector;
@@ -28,12 +18,6 @@ export default class Vector {
     equals(vec: Vector): boolean;
     lerp(vec: Vector, t: number): this;
     isZero(): boolean;
-    getBounds(): {
-        top: number;
-        bottom: number;
-        left: number;
-        right: number;
-    };
     dot(vec: Vector): number;
     getLength(): number;
     getDistance(vec: Vector): number;

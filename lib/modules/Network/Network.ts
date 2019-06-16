@@ -42,9 +42,8 @@ export default class VdekjeNetwork implements Network {
       const node = this.data.nodes[i];
       if (typeof node.position != typeof Vector) {
         node.position = new Vector(
-          { x: node.position.x, y: node.position.y },
-          node.position.width,
-          node.position.height
+          node.position.x,
+          node.position.y
         );
       }
       const circle = createCircle(node);
@@ -101,21 +100,26 @@ export default class VdekjeNetwork implements Network {
     });
   }
 
+  private _render() {
+    this.layer.batchDraw();
+  }
+
   private _draw() {
     const startTime = new Date().getTime();
-    console.log('start draw');
-    const positions = this.physicsEngine.step(new Date().getTime());
-    Object.keys(positions).forEach(key => {
-      const shape = this.shapes.nodes[key];
-      shape.x(positions[key].x);
-      shape.y(positions[key].y);
-    });
-    this.layer.batchDraw();
-    console.log('end draw', new Date().getTime() - startTime);
-    if (!this.physicsEngine.isStable()) {
-      requestAnimationFrame(() => {
-        this._draw();
+    this.physicsEngine.step().then(positions => {
+      console.log('end step', new Date().getTime() - startTime);
+      Object.keys(positions).forEach(key => {
+        const shape = this.shapes.nodes[key];
+        shape.x(positions[key].x);
+        shape.y(positions[key].y);
       });
-    }
+      this._render();
+      if (!this.physicsEngine.isStable()) {
+        requestAnimationFrame(() => {
+          this._draw();
+        });
+      }
+    });
+    
   }
 }
